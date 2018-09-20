@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<WekiInputHelperFileData>
+  <oscReceivePort>12000</oscReceivePort>
+  <oscSendPort>6449</oscSendPort>
+  <sendHostname>localhost</sendHostname>
+  <sendOscMessage>/wek/outputsAvg</sendOscMessage>
+  <inputs>
+    <oscMessage>/wek/outputs</oscMessage>
+    <numInputs>3</numInputs>
+    <groupName>Inputs</groupName>
+    <inputNames>
+      <string>outputs_1</string>
+      <string>outputs_2</string>
+      <string>outputs_3</string>
+    </inputNames>
+  </inputs>
+  <outputs>
+    <outputs class="linked-list">
+      <wekiinputhelper.Modifiers.WindowedOperation>
+        <name>outputs_1_Avg7</name>
+        <index>0</index>
+        <windowSize>7</windowSize>
+        <op class="wekiinputhelper.Modifiers.AverageWindowOperation"/>
+      </wekiinputhelper.Modifiers.WindowedOperation>
+      <wekiinputhelper.Modifiers.WindowedOperation>
+        <name>outputs_2_Avg7</name>
+        <index>1</index>
+        <windowSize>7</windowSize>
+        <op class="wekiinputhelper.Modifiers.AverageWindowOperation"/>
+      </wekiinputhelper.Modifiers.WindowedOperation>
+      <wekiinputhelper.Modifiers.WindowedOperation>
+        <name>outputs_3_Avg7</name>
+        <index>2</index>
+        <windowSize>7</windowSize>
+        <op class="wekiinputhelper.Modifiers.AverageWindowOperation"/>
+      </wekiinputhelper.Modifiers.WindowedOperation>
+    </outputs>
+    <numOutputTypes>3</numOutputTypes>
+    <dimensionality>3</dimensionality>
+    <hasDependencies>false</hasDependencies>
+  </outputs>
+  <inputTriggerer class="wekiinputhelper.TriggerOnReceive">
+    <c>
+      <type>NONE</type>
+      <howLong>ONCE</howLong>
+      <index>0</index>
+      <val>0.0</val>
+      <appliesTo>INPUT</appliesTo>
+    </c>
+  </inputTriggerer>
+  <isSendingOriginalInputs>false</isSendingOriginalInputs>
+</WekiInputHelperFileData>
